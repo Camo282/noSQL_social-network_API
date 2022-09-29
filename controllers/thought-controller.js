@@ -1,9 +1,9 @@
-const { Thought, User } = require('..models');
+const { Thought, User } = require('../models');
 const thoughtController = {
     //get all thoughts
     getAllThought(req, res) {
         Thought.find({})
-        .then(dbThoughtData => res.json(dbThoguhtData))
+        .then(dbThoughtData => res.json(dbThoughtData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -82,8 +82,8 @@ const thoughtController = {
         })
         .then(updateThought => {
             if (!updateThought) {
-                return res.status(404).json({
-                    message: 'No thought with this id!'
+                res.status(404).json({
+                    message: 'No thoughts found with this id.'
                 });
                 return;
             }
