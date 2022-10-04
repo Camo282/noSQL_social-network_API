@@ -43,7 +43,7 @@ const thoughtController = {
         Thought.create(body)
             .then((ThoughtData) => {
                 return User.findOneAndUpdate(
-                    //create a thoguth using current user
+                    //create a thought using current user
                     {
                         _id: body.userID
                     }, {

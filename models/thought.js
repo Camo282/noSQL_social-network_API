@@ -3,7 +3,7 @@ const moment = require('moment');
 
 const reactionSchema = new Schema({
     //set id to avoid mix up with parent thought ID
-    reationId: {
+    reactionId: {
         type: Schema.Types.ObjectId
     },
     reactionBody: {
@@ -29,7 +29,7 @@ const reactionSchema = new Schema({
 
 const ThoughtSchema = new Schema(
     {
-        thoughtTest: {
+        thoughtText: {
             type: String,
             required: true,
             minlength: 1,
@@ -45,7 +45,7 @@ const ThoughtSchema = new Schema(
             required: true
         },
         //use reaction Schema to validate data for a reply
-        reations: [reactionSchema]
+        reactions: [reactionSchema]
     }, {
         toJSON: {
             virtuals: true,
